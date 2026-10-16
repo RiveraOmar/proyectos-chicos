@@ -1,6 +1,5 @@
 public class Constantes {
     public static final int
-            // Palabras reservadas
             TIPO_INICIA        = 1,
             TIPO_TERMINA       = 2,
             TIPO_INT           = 3,
@@ -10,12 +9,10 @@ public class Constantes {
             TIPO_SI            = 7,
             TIPO_SINO          = 8,
 
-    // Unidades léxicas
     TIPO_IDENTIFICADOR = 9,
             TIPO_NUMERO        = 10,
             TIPO_CADENA        = 11,
 
-    // Simbolos y delimitadores
     TIPO_PUNTO_Y_COMA  = 12,
             TIPO_LLAVE_ABRE    = 13,
             TIPO_LLAVE_CIERRA  = 14,
@@ -23,7 +20,6 @@ public class Constantes {
             TIPO_PAREN_CIERRA  = 16,
             TIPO_ASIGNACION    = 17,
 
-    // Operadores específicos
     TIPO_SUMA          = 18,
             TIPO_RESTA         = 19,
             TIPO_MULTIPLICACION = 20,
@@ -58,7 +54,6 @@ public class Constantes {
 
             case TIPO_ASIGNACION:    return "ASIGNACION";
 
-            // Nombres característicos para la tabla e interfaz
             case TIPO_SUMA:          return "SUMA";
             case TIPO_RESTA:         return "RESTA";
             case TIPO_MULTIPLICACION:return "MULTIPLICACION";

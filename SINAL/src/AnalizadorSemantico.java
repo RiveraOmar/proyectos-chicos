@@ -24,7 +24,6 @@ public class AnalizadorSemantico {
         }
     }
 
-    /* Avanza al siguiente token */
     private void avanzar() {
         if (posicion < tokens.size() - 1) {
             posicion++;
@@ -32,7 +31,6 @@ public class AnalizadorSemantico {
         }
     }
 
-    /* Analiza todo el programa */
     public void analizar() {
 
         if (tokens.isEmpty() == true) {
@@ -44,7 +42,6 @@ public class AnalizadorSemantico {
         }
     }
 
-    /* Decide qué elemento semántico se está analizando */
     private void analizarElemento() {
 
         if (tokenActual.getTipo() == Constantes.TIPO_INT) {
@@ -70,7 +67,6 @@ public class AnalizadorSemantico {
         avanzar();
     }
 
-    /* Analiza: int A; o boolean B; */
     private void analizarDeclaracion(String tipo) {
 
         avanzar();
@@ -99,7 +95,6 @@ public class AnalizadorSemantico {
         }
     }
 
-    /* Verifica que una variable utilizada exista */
     private void analizarUsoVariable() {
 
         String nombre = tokenActual.getValor();
@@ -120,7 +115,6 @@ public class AnalizadorSemantico {
         avanzar();
     }
 
-    /* Analiza: println A; */
     private void analizarPrintln() {
 
         avanzar();

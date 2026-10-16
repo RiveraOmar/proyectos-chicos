@@ -133,10 +133,8 @@ public class Main extends JFrame {
                 new Color(73, 80, 87)));
         panelTokens.add(scrollTokens, BorderLayout.CENTER);
 
-        // SECTOR 4: Código Intermedio, encapsulado en su propia clase.
         moduloCodigoIntermedio = new ModuloCodigoIntermedio();
 
-        // SECTOR 3: Estado + Registro de Errores en el mismo cuadrante.
         panelEstado = new JPanel(new BorderLayout(0, 8));
         panelEstado.setBackground(new Color(240, 242, 245));
         panelEstado.setBorder(BorderFactory.createCompoundBorder(
@@ -190,15 +188,7 @@ public class Main extends JFrame {
         contenidoEstado.add(scrollErrores, BorderLayout.CENTER);
         panelEstado.add(contenidoEstado, BorderLayout.CENTER);
 
-        /*
-         * DISTRIBUCIÓN DE LOS 5 SECTORES:
-         *
-         * 1 Programa       | 2 Tokens       | 3 Estado + Errores
-         * 4 Código inter.  | 4 Código inter. | 5 Próximo módulo (vacío)
-         *
-         * El cuadrante inferior derecho queda reservado para la siguiente
-         * etapa del compilador.
-         */
+       
         JPanel areaTrabajo = new JPanel(new GridBagLayout());
         areaTrabajo.setBackground(new Color(240, 242, 245));
         areaTrabajo.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -207,27 +197,22 @@ public class Main extends JFrame {
         gbc.fill = GridBagConstraints.BOTH;
         gbc.insets = new Insets(6, 6, 6, 6);
 
-        // 1. Programa
         gbc.gridx = 0; gbc.gridy = 0; gbc.gridwidth = 1; gbc.gridheight = 1;
         gbc.weightx = 1.05; gbc.weighty = 0.58;
         areaTrabajo.add(scrollEditor, gbc);
 
-        // 2. Tokens
         gbc.gridx = 1; gbc.gridy = 0; gbc.gridwidth = 1;
         gbc.weightx = 1.35; gbc.weighty = 0.58;
         areaTrabajo.add(panelTokens, gbc);
 
-        // 3. Estado + Registro de Errores en el mismo cuadrante.
         gbc.gridx = 2; gbc.gridy = 0; gbc.gridwidth = 1;
         gbc.weightx = 0.90; gbc.weighty = 0.58;
         areaTrabajo.add(panelEstado, gbc);
 
-        // 4. Código Intermedio abajo a la izquierda.
         gbc.gridx = 0; gbc.gridy = 1; gbc.gridwidth = 2;
         gbc.weightx = 2.40; gbc.weighty = 0.42;
         areaTrabajo.add(moduloCodigoIntermedio.getPanel(), gbc);
 
-        // 5. Espacio reservado para la siguiente parte del compilador.
         JPanel panelFuturo = new JPanel(new BorderLayout());
         panelFuturo.setBackground(new Color(240, 242, 245));
         panelFuturo.setBorder(BorderFactory.createLineBorder(new Color(222, 226, 230)));
@@ -381,7 +366,6 @@ public class Main extends JFrame {
             semantico.analizar();
         }
 
-        // El Código Intermedio se genera desde el botón CI, no automáticamente.
         if (errores.isEmpty()) {
             moduloCodigoIntermedio.limpiar();
             etiquetaEstadoExito.setText("Análisis Semántico Correcto");
@@ -392,10 +376,7 @@ public class Main extends JFrame {
         }
     }
 
-    /**
-     * Ejecuta las fases necesarias y, si no existen errores, llama al módulo
-     * independiente CodigoIntermedio para generar la tabla del sector 4.
-     */
+    
     private void ejecutarCodigoIntermedio() {
         limpiarResultados();
         String codigoFuente = editorCodigo.getText();

@@ -21,7 +21,6 @@ public class Scanner {
         Token tokenEncontrado;
         do {
             tokenEncontrado = leerSiguienteToken();
-// Si el scanner detectó un error, interrumpimos el análisis inmediatamente (Primer error)
             if (!listaDeErrores.isEmpty()) {
                 break;
             }
@@ -58,7 +57,6 @@ public class Scanner {
         }
     }
 
-    // PALABRAS RESERVADAS E IDENTIFICADORES
     private Token extraerPalabra() {
         int lineaDelToken = numeroLinea;
         StringBuilder textoAcumulado = new StringBuilder();
@@ -100,7 +98,6 @@ public class Scanner {
         return textoAEvaluar.length() > 0;
     }
 
-    // NUMEROS
     private Token extraerNumero() {
         int lineaDelToken = numeroLinea;
         StringBuilder digitosAcumulados = new StringBuilder();
@@ -118,10 +115,9 @@ public class Scanner {
         return new Token(digitosAcumulados.toString(), Constantes.TIPO_NUMERO, lineaDelToken);
     }
 
-    // CADENAS DE TEXTO
     private Token extraerCadenaTexto() {
         int lineaDelToken = numeroLinea;
-        posicionActual++; // Consume la comilla de apertura
+        posicionActual++; 
         StringBuilder contenidoDeCadena = new StringBuilder();
         boolean contieneComillaDeCierre = false;
         while (posicionActual < codigoFuente.length()) {
@@ -145,7 +141,6 @@ public class Scanner {
         return new Token("\"" + contenidoDeCadena.toString() + "\"", Constantes.TIPO_CADENA, lineaDelToken);
     }
 
-    // SIMBOLOS Y OPERADORES
     private Token extraerSimbolo(char simboloEncontrado) {
         int lineaDelToken = numeroLinea;
         posicionActual++;

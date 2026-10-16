@@ -29,7 +29,6 @@ public class PanelCodigoIntermedio extends JPanel {
         encabezado.add(botonCI);
         add(encabezado, BorderLayout.NORTH);
 
-        // Recuadro propio donde se muestra la tabla de código intermedio.
         JPanel recuadro = new JPanel(new BorderLayout());
         recuadro.setBackground(new Color(240, 242, 245));
         recuadro.setBorder(BorderFactory.createLineBorder(new Color(206, 212, 218)));

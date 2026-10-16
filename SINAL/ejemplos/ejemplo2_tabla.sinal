@@ -1,0 +1,28 @@
+INICIA
+    int NUM;
+    int I;
+    int RES;
+    int LIMITE;
+    boolean ESPAR;
+
+    NUM = 7;
+    I = 1;
+    LIMITE = 10;
+
+    println "TABLA";
+    println NUM;
+
+    while ( I < LIMITE ) {
+        RES = ( NUM & I );
+        println RES;
+        I = ( I @ 1 );
+    };
+
+    ESPAR = ( NUM > 5 );
+
+    si ESPAR {
+        println "MAYOR";
+    } sino {
+        println "MENOR";
+    };
+TERMINA

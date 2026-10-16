@@ -1,0 +1,26 @@
+INICIA
+    int CONT;
+    int SUMA;
+    int TOPE;
+    boolean BAN;
+
+    CONT = 1;
+    SUMA = 0;
+    TOPE = 5;
+
+    println "SUMANDO";
+
+    while ( CONT < TOPE ) {
+        SUMA = ( SUMA @ CONT );
+        CONT = ( CONT @ 1 );
+    };
+
+    BAN = ( SUMA == 10 );
+
+    si ( SUMA > 8 ) {
+        println "TOTAL";
+        println SUMA;
+    } sino {
+        println CONT;
+    };
+TERMINA

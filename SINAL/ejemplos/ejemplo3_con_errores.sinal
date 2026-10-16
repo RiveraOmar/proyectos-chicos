@@ -1,0 +1,10 @@
+INICIA
+    int X;
+    int X;
+    Y = 5;
+    Z = ( 2 @ verde );
+    while 3 {
+        X = 1;
+    };
+    println X
+TERMINA

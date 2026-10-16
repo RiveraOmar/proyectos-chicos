@@ -1,2 +1,2 @@
-# TrabajosSchool
-Trabajos Escuela
+# Mini-Proyectos
+Proyectos Chicos
